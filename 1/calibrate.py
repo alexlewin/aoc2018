@@ -4,13 +4,22 @@ import sys
 
 
 state = 0
+for line in open('input'):
+    state += int(line)
+
+print('after all lines:', state)
+
+
+#####
+
+
+state = 0
 seen = set([state])
 
 while True:
     for line in open('input'):
-        print(state)
         state += int(line)
         if state in seen:
-           print(state)
+           print('first repeated:', state)
            exit(0)
         seen.add(state)
